@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name, describe) {
+          this._name = name;
+          this._describe = describe;
+        }
+        static calculate(a = 1) {
+          return a * 3;
+        }
+      }
+
+      class Geometry extends Person{
+        constructor(name,describe,longs){
+            super(name,describe);
+            this._longs = longs;
+        }
+      }
+
+      const geometry = new Geometry("chiều dài", "ABC", 3 );
+
+      console.log(geometry._name);
+      console.log(geometry._describe);
+      console.log(geometry._longs);
+      Person.calculate();
+
+    </script>
+  </body>
+</html>
