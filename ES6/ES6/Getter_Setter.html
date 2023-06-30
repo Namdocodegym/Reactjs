@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,constructor){
+                this._name = name;
+            }
+
+            get name(){
+                return this._name;
+            }
+
+            set name(newValue){
+                this._name = newValue;
+            }
+
+            walk(destance){
+                console.log(this._name +" "+ "walk" + " " + destance)
+            }
+        }
+
+        class Programmer extends Person{
+            constructor(name,programmingLanguage){
+                super(name);
+                this._programmingLanguage = programmingLanguage;
+            }
+
+            get programmingLanguage(){
+                return this._programmingLanguage;
+            }
+
+            set programmingLanguage(newLanguage){
+                this._programmingLanguage = newLanguage;
+            }
+
+            writeCode(){
+                console.log(`${this._name} is writing code in ${this._programmingLanguage}`);
+            }
+        }
+
+        const programmer = new Programmer("Nam","Reactjs");
+        programmer.walk(3);
+        programmer.writeCode();
+
+        console.log(programmer._name);
+        console.log(programmer._programmingLanguage);
+
+
+
+    </script>
+</body>
+</html>
