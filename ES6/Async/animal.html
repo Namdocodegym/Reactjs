@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="display: flex;justify-content: center;">
+      <div class="row">
+        <div class="logo">
+          <h1 style="color: red;">ANIMAL</h1>
+        </div>
+        <div class="header">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="tìm kiếm..."
+            min="100"
+            required
+          />
+          <button class="search_btn" name="search">Search Giphy!</button>
+          <button class="delete_btn" style="color: red;" name="remove" onclick="removeImages()">Remove Images</button>
+          
+        </div>
+      </div>
+    </div>
+    <div id="imageContainer"></div>
+
+    <script>
+      document
+        .getElementById("searchInput")
+        .addEventListener("blur", function () {
+          let API_KEY = "UWBxd3mqQkt42VQSYR5OQLV1oia9ltc1";
+          let keyword = event.target.value;
+          fetch(
+            `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${API_KEY}`
+          )
+            .then((res) => res.json())
+            .then((res) => {
+              let imageContainer = document.getElementById("imageContainer");
+              let image = document.createElement("img");
+              image.src = res.data[0].images.original.url;
+              image.alt = "GIF";
+              imageContainer.appendChild(image);
+            })
+            .catch((err) => console.log(err));
+        });
+
+        function removeImages(){
+            let removeImg = document.getElementById('imageContainer')
+            removeImg.innerHTML = "";
+            confirm("bạn muốn xóa đúng không?")
+            
+        }
+    </script>
+  </body>
+</html>
