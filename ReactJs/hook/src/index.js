@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CarSelection from './components/CarSelection';
+import Timer from './components/Timer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CarSelection />
+     {/* <App /> */}
+     {/* <CarSelection /> */}
+     <Timer/>
     
   </React.StrictMode>
 );
