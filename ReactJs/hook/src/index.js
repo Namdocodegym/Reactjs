@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CarSelection from './components/CarSelection';
 import Timer from './components/Timer';
+import { Counter1 } from './components/Counter';
+import All from './components/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      {/* <App /> */}
      {/* <CarSelection /> */}
-     <Timer/>
+     {/* <Timer/> */}
+     <All />
     
   </React.StrictMode>
 );
