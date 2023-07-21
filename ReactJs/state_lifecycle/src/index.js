@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Calculator from './components/Calculator';
+// import Calculator from './components/Calculator';
+import Homework6 from './components/Homework6';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <Calculator />
+    {/* <Calculator /> */}
+    <Homework6 />
   </React.StrictMode>
 );
 
